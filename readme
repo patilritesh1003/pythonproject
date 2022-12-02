@@ -1,13 +1,53 @@
+Create RDS
+Create S3 Bucket
+#launch EC2
 sudo apt-get update
-# For Sql-client
 sudo apt-get install mysql-client
+mysql -h empolyee.ccwynomhislt.us-east-1.rds.amazonaws.com -u  admin -p
+mysql>show database;
+mysql>create database employee;
+mysql>use employee
+mysql>create table employee(
+->empid varchar(20),
+->fname varchar(20),
+->lname varchar(20),
+->pri_skill varchar(20),
+->location varchar(20));
+mysql>show tables;
+exit
+#go to project and type details
+customhost = "RDS Endpoint pest here"
+customuser = "database username"
+custompass = "database password"
+customdb = "employee"
+custombucket = "s3bucket name pest here"
+customregion = "select region"
 
-# For python and related frameworks
-
+#go to ec2
 sudo apt-get install python3
-sudo apt-get install python3-flask
-sudo apt-get install python3-pymysql
-sudo apt-get install python3-boto3
+sudo apt-get install python3-pip
+pip3 install pymysql boto3
+sudo python3 Empapp.py
 
-# for running application
-sudo python3 EmpApp.py
+
+go to iam user
+select role
+create role 
+ec2 select
+select police name adminaccess
+create police
+
+
+go to ec2
+selet ec2
+click on action
+select instance setting
+select attach/relace/iam role
+select crated role 
+and create
+updated role
+
+
+
+
+
